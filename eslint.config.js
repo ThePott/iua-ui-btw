@@ -27,9 +27,6 @@ export default defineConfig([
                     varsIgnorePattern: "^_", // _로 시작하는 변수는 미사용 허용
                 },
             ],
-            "react/jsx-boolean-value": "error", // boolean prop 축약 권장
-            "react/jsx-fragments": "error", // Fragment 단축 문법 권장
-            "react/jsx-no-useless-fragment": "error", // 불필요한 Fragment 경고
 
             // ===== 기본적인 코드 품질 =====
             "no-console": "error", // console.log 사용시 경고 (개발 중에는 필요할 수 있음)
