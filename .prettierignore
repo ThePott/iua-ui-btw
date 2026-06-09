@@ -1,0 +1,6 @@
+**/.git
+node_modules
+dist
+package.json
+pnpm-lock.yaml
+.husky
