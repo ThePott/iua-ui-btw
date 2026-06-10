@@ -1,2 +1,2 @@
-export * from "./common/"
-export * from "./default/"
+export * from "./common/common.type"
+export * from "./default/default.type"

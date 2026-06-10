@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+:root {
+    color-scheme: light dark;
+    background-color: var(--color-iua-bg-neg-1);
+    color: var(--color-iua-fg-vivid);
+}
+
+@theme {
+    --spacing-iua-xs: 4px;
+    --spacing-iua-sm: 8px;
+    --spacing-iua-md: 12px;
+    --spacing-iua-lg: 24px;
+    --spacing-iua-xl: 48px;
+
+    --sizing-iua-xs: 60px;
+    --sizing-iua-sm: 120px;
+    --sizing-iua-md: 240px;
+    /* 아래는 용도를 모르겠다 */
+    --sizing-iua-lg: 480px;
+    --sizing-iua-xl: 960px;
+
+    --shadow-iua-sm:
+        inset 0px 1px 2px oklch(from var(--color-iua-fg-vivid) l c h / 0.2), 0px 4px 4px -1px #00000025,
+        0px 2px 2px -2px #00000025;
+    --shadow-iua-md:
+        inset 0px 1px 2px oklch(from var(--color-iua-fg-vivid) l c h / 0.4), 0px 6px 6px -2px #00000025,
+        0px 3px 3px -3px #00000025;
+    --shadow-iua-lg:
+        inset 0px 1px 2px oklch(from var(--color-iua-fg-vivid) l c h / 0.6), 0px 24px 24px -8px #00000025,
+        0px 12px 12px -12px #00000025;
+
+    --shadow-inward-iua-sm: inset 0px -1px 2px oklch(from var(--color-iua-fg-vivid) l c h / 0.3);
+    --shadow-inward-iua-md: inset 0px -1px 2px oklch(from var(--color-iua-fg-vivid) l c h / 0.4);
+    --shadow-inward-iua-lg: inset 0px -1px 2px oklch(from var(--color-iua-fg-vivid) l c h / 0.6);
+
+    --radius-iua-sm: 6px;
+    --radius-iua-md: 12px;
+    --radius-iua-lg: 24px;
+
+    --text-iua-xs: 12px;
+    --text-iua-sm: 14px;
+    --text-iua-md: 16px;
+    --text-iua-lg: 18px;
+    --text-iua-xl: 24px;
+
+    --color-iua-bg-neg-1: oklch(from var(--color-iua-bg-0) calc(l + 0.02) c h);
+    --color-iua-bg-0: oklch(from var(--color-iua-bg-base) l c h);
+    --color-iua-bg-1: oklch(from var(--color-iua-bg-0) calc(l - 0.02) c h);
+    --color-iua-bg-2: oklch(from var(--color-iua-bg-1) calc(l - 0.02) c h);
+    --color-iua-bg-3: oklch(from var(--color-iua-bg-2) calc(l - 0.02) c h);
+    --color-iua-bg-4: oklch(from var(--color-iua-bg-3) calc(l - 0.02) c h);
+
+    --color-iua-fg-vivid: oklch(from var(--color-iua-fg-base) l c h);
+    --color-iua-fg-muted: oklch(from var(--color-iua-fg-vivid) l c h / 0.6);
+    --color-iua-fg-dim: oklch(from var(--color-iua-fg-muted) l c h / calc(alpha * 0.6));
+
+    --color-iua-fg-inverted-vivid: oklch(from var(--color-iua-fg-inverted-base) l c h);
+    --color-iua-fg-inverted-muted: oklch(from var(--color-iua-fg-inverted-vivid) l c h / 0.6);
+    --color-iua-fg-inverted-dim: oklch(from var(--color-iua-fg-inverted-muted) l c h / calc(alpha * 0.6));
+
+    --color-iua-red-neg-1: oklch(from var(--color-iua-red-0) l c h / 0.6);
+    --color-iua-red-0: oklch(from var(--color-iua-red-base) l c h);
+    --color-iua-red-1: oklch(from var(--color-iua-red-0) calc(l - 0.1) c h);
+    --color-iua-red-2: oklch(from var(--color-iua-red-1) calc(l - 0.1) c h);
+
+    --color-iua-yellow-neg-1: oklch(from var(--color-iua-yellow-0) l c h / 0.6);
+    --color-iua-yellow-0: oklch(from var(--color-iua-yellow-base) l c h);
+    --color-iua-yellow-1: oklch(from var(--color-iua-yellow-0) calc(l - 0.1) c h);
+    --color-iua-yellow-2: oklch(from var(--color-iua-yellow-1) calc(l - 0.1) c h);
+
+    --color-iua-green-neg-1: oklch(from var(--color-iua-green-0) l c h / 0.6);
+    --color-iua-green-0: oklch(from var(--color-iua-green-base) l c h);
+    --color-iua-green-1: oklch(from var(--color-iua-green-0) calc(l - 0.1) c h);
+    --color-iua-green-2: oklch(from var(--color-iua-green-1) calc(l - 0.1) c h);
+
+    --color-iua-blue-neg-1: oklch(from var(--color-iua-blue-0) l c h / 0.6);
+    --color-iua-blue-0: oklch(from var(--color-iua-blue-base) l c h);
+    --color-iua-blue-1: oklch(from var(--color-iua-blue-0) calc(l - 0.1) c h);
+    --color-iua-blue-2: oklch(from var(--color-iua-blue-1) calc(l - 0.1) c h);
+}
+
+:root[data-schema="ghostty"] {
+    --color-iua-bg-base: light-dark(oklch(calc(1 - 0.2921) 0.014 261.7), oklch(0.2921 0.014 261.7));
+    --color-iua-fg-base: light-dark(oklch(calc(1 - 0.937) 0 0), oklch(0.937 0 0));
+    --color-iua-fg-inverted-base: light-dark(oklch(0.937 0 0), oklch(calc(1 - 0.937) 0 0));
+    --color-iua-red-base: light-dark(oklch(calc(1 - 0.6308) 0.1298 21.44), oklch(0.6308 0.1298 21.44));
+    --color-iua-yellow-base: light-dark(oklch(calc(1 - 0.8452) 0.1093 112.8), oklch(0.8452 0.1111 83.5));
+    --color-iua-green-base: light-dark(oklch(calc(1 - 0.7741) 0.1093 112.8), oklch(0.7741 0.1093 112.8));
+    --color-iua-blue-base: light-dark(oklch(calc(1 - 0.6971) 0.054 243.29), oklch(0.6971 0.054 243.29));
+}
+
+/* IC Orange PPL - Warm orange terminal theme */
+:root[data-schema="ic-orange-ppl"] {
+    /* bg: #262626 (dark), fg: #FFCB83 (warm orange cream) */
+    --color-iua-bg-base: light-dark(oklch(0.85 0.03 70), oklch(0.22 0.01 60));
+    --color-iua-fg-base: light-dark(oklch(0.25 0.06 60), oklch(0.85 0.08 70));
+    --color-iua-fg-inverted-base: light-dark(oklch(0.85 0.08 70), oklch(0.25 0.06 60));
+    /* red: #C13900 (burnt orange-red) */
+    --color-iua-red-base: light-dark(oklch(0.45 0.16 35), oklch(0.6 0.18 35));
+    /* yellow: #CAAF00 (golden yellow) */
+    --color-iua-yellow-base: light-dark(oklch(0.65 0.14 95), oklch(0.82 0.14 95));
+    /* green: #A4A900 (olive green) */
+    --color-iua-green-base: light-dark(oklch(0.6 0.12 110), oklch(0.75 0.14 110));
+    /* blue: #BD6D00 (amber/orange - no true blue in this palette) */
+    --color-iua-blue-base: light-dark(oklch(0.5 0.12 65), oklch(0.65 0.14 65));
+}
+
+/* Rose Pine - All natural pine, faux fur and a bit of soho vibes */
+:root[data-schema="rose-pine"] {
+    /* bg: #191724 (dark base), fg: #e0def4 (soft lavender text) */
+    --color-iua-bg-base: light-dark(oklch(0.92 0.02 280), oklch(0.18 0.03 280));
+    --color-iua-fg-base: light-dark(oklch(0.22 0.03 280), oklch(0.92 0.03 280));
+    --color-iua-fg-inverted-base: light-dark(oklch(0.92 0.03 280), oklch(0.22 0.03 280));
+    /* love: #eb6f92 (rose pink) */
+    --color-iua-red-base: light-dark(oklch(0.55 0.15 10), oklch(0.7 0.16 10));
+    /* gold: #f6c177 (warm gold) */
+    --color-iua-yellow-base: light-dark(oklch(0.7 0.12 70), oklch(0.82 0.12 70));
+    /* pine: #31748f (teal pine) */
+    --color-iua-green-base: light-dark(oklch(0.42 0.08 200), oklch(0.55 0.1 200));
+    /* iris: #c4a7e7 (soft purple) */
+    --color-iua-blue-base: light-dark(oklch(0.6 0.12 300), oklch(0.75 0.12 300));
+}
+
+/* Tokyo Night - Clean theme celebrating downtown Tokyo at night */
+:root[data-schema="tokyo-night"] {
+    /* bg: #1a1b26 (night blue), fg: #a9b1d6 (soft blue-gray) */
+    --color-iua-bg-base: light-dark(oklch(0.92 0.02 250), oklch(0.18 0.03 260));
+    --color-iua-fg-base: light-dark(oklch(0.25 0.04 250), oklch(0.78 0.05 260));
+    --color-iua-fg-inverted-base: light-dark(oklch(0.78 0.05 260), oklch(0.25 0.04 250));
+    /* red: #f7768e (cherry blossom pink) */
+    --color-iua-red-base: light-dark(oklch(0.55 0.18 10), oklch(0.72 0.18 10));
+    /* yellow: #e0af68 (warm lantern) */
+    --color-iua-yellow-base: light-dark(oklch(0.62 0.12 75), oklch(0.78 0.12 75));
+    /* green: #73daca (neon cyan-green) */
+    --color-iua-green-base: light-dark(oklch(0.7 0.1 175), oklch(0.82 0.12 175));
+    /* blue: #7aa2f7 (electric blue) */
+    --color-iua-blue-base: light-dark(oklch(0.55 0.14 260), oklch(0.72 0.16 260));
+}
+
+/* Gruvbox - Retro groove color scheme with pastel colors */
+:root[data-schema="gruvbox"] {
+    /* bg: #282828 (dark), fg: #ebdbb2 (cream) */
+    --color-iua-bg-base: light-dark(oklch(0.92 0.03 90), oklch(0.23 0.03 60));
+    --color-iua-fg-base: light-dark(oklch(0.28 0.05 60), oklch(0.9 0.05 90));
+    --color-iua-fg-inverted-base: light-dark(oklch(0.9 0.05 90), oklch(0.28 0.05 60));
+    /* red: #cc241d / #fb4934 */
+    --color-iua-red-base: light-dark(oklch(0.48 0.18 25), oklch(0.65 0.2 25));
+    /* yellow: #d79921 / #fabd2f */
+    --color-iua-yellow-base: light-dark(oklch(0.62 0.14 80), oklch(0.82 0.14 85));
+    /* green: #98971a / #b8bb26 */
+    --color-iua-green-base: light-dark(oklch(0.58 0.12 105), oklch(0.75 0.14 105));
+    /* blue: #458588 / #83a598 */
+    --color-iua-blue-base: light-dark(oklch(0.48 0.06 195), oklch(0.68 0.06 175));
+}
+
+@utility iua-transition {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.08, 0.34, 0.26, 1.11);
+    transition-duration: 0.1s;
+}
